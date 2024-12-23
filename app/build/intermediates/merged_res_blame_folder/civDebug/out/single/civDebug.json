@@ -1,50 +1,54 @@
 [
     {
-        "merged": "com.atakmap.android.cotexplorer.plugin.app-merged_res-7:/drawable-hdpi_ic_filter.png.flat",
-        "source": "com.atakmap.android.cotexplorer.plugin.app-main-10:/drawable-hdpi/ic_filter.png"
+        "merged": "C:\\Users\\cfben\\.gradle\\daemon\\7.6.1\\com.atakmap.android.cotexplorer.plugin.app-merged_res-7:\\drawable-mdpi_ic_filter.png.flat",
+        "source": "C:\\Users\\cfben\\.gradle\\daemon\\7.6.1\\com.atakmap.android.cotexplorer.plugin.app-main-10:\\drawable-mdpi\\ic_filter.png"
     },
     {
-        "merged": "com.atakmap.android.cotexplorer.plugin.app-merged_res-7:/drawable_new_dark_button_disabled.xml.flat",
-        "source": "com.atakmap.android.cotexplorer.plugin.app-main-10:/drawable/new_dark_button_disabled.xml"
+        "merged": "C:\\Users\\cfben\\.gradle\\daemon\\7.6.1\\com.atakmap.android.cotexplorer.plugin.app-merged_res-7:\\drawable-xxxhdpi_ic_filter.png.flat",
+        "source": "C:\\Users\\cfben\\.gradle\\daemon\\7.6.1\\com.atakmap.android.cotexplorer.plugin.app-main-10:\\drawable-xxxhdpi\\ic_filter.png"
     },
     {
-        "merged": "com.atakmap.android.cotexplorer.plugin.app-merged_res-7:/drawable-xxxhdpi_ic_filter.png.flat",
-        "source": "com.atakmap.android.cotexplorer.plugin.app-main-10:/drawable-xxxhdpi/ic_filter.png"
+        "merged": "C:\\Users\\cfben\\.gradle\\daemon\\7.6.1\\com.atakmap.android.cotexplorer.plugin.app-merged_res-7:\\drawable_new_dark_button_selected.xml.flat",
+        "source": "C:\\Users\\cfben\\.gradle\\daemon\\7.6.1\\com.atakmap.android.cotexplorer.plugin.app-main-10:\\drawable\\new_dark_button_selected.xml"
     },
     {
-        "merged": "com.atakmap.android.cotexplorer.plugin.app-merged_res-7:/drawable_ic_launcher.png.flat",
-        "source": "com.atakmap.android.cotexplorer.plugin.app-main-10:/drawable/ic_launcher.png"
+        "merged": "C:\\Users\\cfben\\.gradle\\daemon\\7.6.1\\com.atakmap.android.cotexplorer.plugin.app-merged_res-7:\\drawable_ic_launcher.png.flat",
+        "source": "C:\\Users\\cfben\\.gradle\\daemon\\7.6.1\\com.atakmap.android.cotexplorer.plugin.app-main-10:\\drawable\\ic_launcher.png"
     },
     {
-        "merged": "com.atakmap.android.cotexplorer.plugin.app-merged_res-7:/drawable-mdpi_ic_filter.png.flat",
-        "source": "com.atakmap.android.cotexplorer.plugin.app-main-10:/drawable-mdpi/ic_filter.png"
+        "merged": "C:\\Users\\cfben\\.gradle\\daemon\\7.6.1\\com.atakmap.android.cotexplorer.plugin.app-merged_res-7:\\drawable-xxhdpi_ic_filter.png.flat",
+        "source": "C:\\Users\\cfben\\.gradle\\daemon\\7.6.1\\com.atakmap.android.cotexplorer.plugin.app-main-10:\\drawable-xxhdpi\\ic_filter.png"
     },
     {
-        "merged": "com.atakmap.android.cotexplorer.plugin.app-merged_res-7:/drawable_new_dark_button_bg.xml.flat",
-        "source": "com.atakmap.android.cotexplorer.plugin.app-main-10:/drawable/new_dark_button_bg.xml"
+        "merged": "C:\\Users\\cfben\\.gradle\\daemon\\7.6.1\\com.atakmap.android.cotexplorer.plugin.app-merged_res-7:\\layout_main_layout.xml.flat",
+        "source": "C:\\Users\\cfben\\.gradle\\daemon\\7.6.1\\com.atakmap.android.cotexplorer.plugin.app-main-10:\\layout\\main_layout.xml"
     },
     {
-        "merged": "com.atakmap.android.cotexplorer.plugin.app-merged_res-7:/drawable-xhdpi_ic_filter.png.flat",
-        "source": "com.atakmap.android.cotexplorer.plugin.app-main-10:/drawable-xhdpi/ic_filter.png"
+        "merged": "C:\\Users\\cfben\\.gradle\\daemon\\7.6.1\\com.atakmap.android.cotexplorer.plugin.app-merged_res-7:\\drawable_btn_gray.xml.flat",
+        "source": "C:\\Users\\cfben\\.gradle\\daemon\\7.6.1\\com.atakmap.android.cotexplorer.plugin.app-main-10:\\drawable\\btn_gray.xml"
     },
     {
-        "merged": "com.atakmap.android.cotexplorer.plugin.app-merged_res-7:/drawable_new_dark_button_selected.xml.flat",
-        "source": "com.atakmap.android.cotexplorer.plugin.app-main-10:/drawable/new_dark_button_selected.xml"
+        "merged": "C:\\Users\\cfben\\.gradle\\daemon\\7.6.1\\com.atakmap.android.cotexplorer.plugin.app-merged_res-7:\\xml_preferences.xml.flat",
+        "source": "C:\\Users\\cfben\\.gradle\\daemon\\7.6.1\\com.atakmap.android.cotexplorer.plugin.app-main-10:\\xml\\preferences.xml"
     },
     {
-        "merged": "com.atakmap.android.cotexplorer.plugin.app-merged_res-7:/drawable-xxhdpi_ic_filter.png.flat",
-        "source": "com.atakmap.android.cotexplorer.plugin.app-main-10:/drawable-xxhdpi/ic_filter.png"
+        "merged": "C:\\Users\\cfben\\.gradle\\daemon\\7.6.1\\com.atakmap.android.cotexplorer.plugin.app-merged_res-7:\\drawable-xhdpi_ic_filter.png.flat",
+        "source": "C:\\Users\\cfben\\.gradle\\daemon\\7.6.1\\com.atakmap.android.cotexplorer.plugin.app-main-10:\\drawable-xhdpi\\ic_filter.png"
     },
     {
-        "merged": "com.atakmap.android.cotexplorer.plugin.app-merged_res-7:/drawable_btn_gray.xml.flat",
-        "source": "com.atakmap.android.cotexplorer.plugin.app-main-10:/drawable/btn_gray.xml"
+        "merged": "C:\\Users\\cfben\\.gradle\\daemon\\7.6.1\\com.atakmap.android.cotexplorer.plugin.app-merged_res-7:\\drawable_new_dark_button_bg.xml.flat",
+        "source": "C:\\Users\\cfben\\.gradle\\daemon\\7.6.1\\com.atakmap.android.cotexplorer.plugin.app-main-10:\\drawable\\new_dark_button_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\cfben\\.gradle\\daemon\\7.6.1\\com.atakmap.android.cotexplorer.plugin.app-merged_res-7:\\drawable_new_dark_button_disabled.xml.flat",
+        "source": "C:\\Users\\cfben\\.gradle\\daemon\\7.6.1\\com.atakmap.android.cotexplorer.plugin.app-main-10:\\drawable\\new_dark_button_disabled.xml"
     },
     {
         "merged": "com.atakmap.android.cotexplorer.plugin.app-merged_res-7:/layout_main_layout.xml.flat",
         "source": "com.atakmap.android.cotexplorer.plugin.app-main-10:/layout/main_layout.xml"
     },
     {
-        "merged": "com.atakmap.android.cotexplorer.plugin.app-merged_res-7:/xml_preferences.xml.flat",
-        "source": "com.atakmap.android.cotexplorer.plugin.app-main-10:/xml/preferences.xml"
+        "merged": "C:\\Users\\cfben\\.gradle\\daemon\\7.6.1\\com.atakmap.android.cotexplorer.plugin.app-merged_res-7:\\drawable-hdpi_ic_filter.png.flat",
+        "source": "C:\\Users\\cfben\\.gradle\\daemon\\7.6.1\\com.atakmap.android.cotexplorer.plugin.app-main-10:\\drawable-hdpi\\ic_filter.png"
     }
 ]

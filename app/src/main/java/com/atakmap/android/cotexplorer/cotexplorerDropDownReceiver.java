@@ -71,12 +71,16 @@ public class cotexplorerDropDownReceiver extends DropDownReceiver implements
     final InspectionMapItemSelectionTool imis;
 
     private boolean paused = false;
-    private TextView cotexplorerlog = null;
-    private Button sendBtn, clearBtn, pauseBtn, saveBtn, inspectBtn = null;
+    private TextView cotexplorerlog, pageCounter = null;
+    private Button sendBtn, clearBtn, pauseBtn, saveBtn, inspectBtn, nextPageBtn, prevPageBtn = null;
     private ImageButton filterBtn = null;
     private SharedPreferences _sharedPreference = null;
     private String cotFilter = "";
     private List<String> fullLog = new ArrayList<>();
+    private static final int maxDisplayedEntries = 20;
+    private int currentPage = 1;
+    private List<String> displayedLog = new ArrayList<>();
+    private int totalPages = 1;
 
     /**************************** CONSTRUCTOR *****************************/
 
@@ -97,6 +101,10 @@ public class cotexplorerDropDownReceiver extends DropDownReceiver implements
         saveBtn = mainView.findViewById(R.id.saveBtn);
         sendBtn = mainView.findViewById(R.id.sendBtn);
         inspectBtn = mainView.findViewById(R.id.inspectBtn);
+        nextPageBtn = mainView.findViewById(R.id.nextPageBtn);
+        prevPageBtn = mainView.findViewById(R.id.prevPageBtn);
+        pageCounter = mainView.findViewById(R.id.pageCounter);
+        pageCounter.setText(String.format("Page %d / %d", currentPage, totalPages));
 
         _sharedPreference = PreferenceManager.getDefaultSharedPreferences(mapView.getContext().getApplicationContext());
 
@@ -157,6 +165,9 @@ public class cotexplorerDropDownReceiver extends DropDownReceiver implements
             public void onClick(View view) {
                 fullLog.clear();
                 cotexplorerlog.setText("");
+                currentPage = 1;
+                totalPages = 1;
+                pageCounter.setText(String.format("Page %d / %d", currentPage, totalPages));
             }
         });
 
@@ -288,6 +299,26 @@ public class cotexplorerDropDownReceiver extends DropDownReceiver implements
         });
 
         CommsMapComponent.getInstance().registerCommsLogger(this);
+
+        nextPageBtn.setOnClickListener(v -> {
+            if (currentPage < totalPages) {
+                currentPage++;
+                applyFilter(); // Update the view with the new page's data
+                pageCounter.setText(String.format("Page %d / %d", currentPage, totalPages));
+            } else {
+                Toast.makeText(pluginContext, "You are on the last page", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        prevPageBtn.setOnClickListener(v -> {
+            if (currentPage > 1) {
+                currentPage--;
+                applyFilter(); // Update the view with the new page's data
+                pageCounter.setText(String.format("Page %d / %d", currentPage, totalPages));
+            } else {
+                Toast.makeText(pluginContext, "You are on the first page", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
@@ -314,8 +345,19 @@ public class cotexplorerDropDownReceiver extends DropDownReceiver implements
 
     private void applyFilter() {
         SpannableStringBuilder filteredLog = new SpannableStringBuilder();
+        totalPages = (int) Math.ceil((double) fullLog.size() / maxDisplayedEntries);
 
-        for (String log : fullLog) {
+        // Ensure currentPage is within valid bounds
+        if (currentPage > totalPages) {
+            currentPage = totalPages;
+        }
+
+        int startIdx = (currentPage - 1) * maxDisplayedEntries;
+        int endIdx = Math.min(startIdx + maxDisplayedEntries, fullLog.size());
+
+        displayedLog.clear();
+        for (int i = startIdx; i < endIdx; i++) {
+            String log = fullLog.get(i);
             if (cotFilter.isEmpty() || log.contains(cotFilter)) {
                 if (!cotFilter.isEmpty()) {
                     // Highlight the matching part
@@ -339,6 +381,7 @@ public class cotexplorerDropDownReceiver extends DropDownReceiver implements
         }
 
         cotexplorerlog.setText(filteredLog);
+        pageCounter.setText(String.format("Page %d / %d", currentPage, totalPages));
     }
 
     final class InspectionMapItemSelectionTool
@@ -356,6 +399,20 @@ public class cotexplorerDropDownReceiver extends DropDownReceiver implements
             return true;
         }
 
+    }
+
+    private void showNextPage() {
+        if ((currentPage + 1) * maxDisplayedEntries < fullLog.size()) {
+            currentPage++;
+            applyFilter();
+        }
+    }
+
+    private void showPreviousPage() {
+        if (currentPage > 0) {
+            currentPage--;
+            applyFilter();
+        }
     }
 
     @Override

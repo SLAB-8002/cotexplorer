@@ -1,11 +1,11 @@
-com.atakmap.android.cotexplorer.plugin.app-core-1.0.0-0 C:\Users\cbenbow\.gradle\caches\transforms-3\bdb1ba6cabf83502d34b6a8dd21d59f9\transformed\core-1.0.0\res
-com.atakmap.android.cotexplorer.plugin.app-debug-1 C:\Users\cbenbow\AndroidStudioProjects\ATAK-MIL-5.3.0.3-SDK\plugins\cotexplorer\app\build-types\debug\res
-com.atakmap.android.cotexplorer.plugin.app-civ-2 C:\Users\cbenbow\AndroidStudioProjects\ATAK-MIL-5.3.0.3-SDK\plugins\cotexplorer\app\build\generated\res\pngs\civ\debug
-com.atakmap.android.cotexplorer.plugin.app-civ-3 C:\Users\cbenbow\AndroidStudioProjects\ATAK-MIL-5.3.0.3-SDK\plugins\cotexplorer\app\build\generated\res\resValues\civ\debug
-com.atakmap.android.cotexplorer.plugin.app-civ-4 C:\Users\cbenbow\AndroidStudioProjects\ATAK-MIL-5.3.0.3-SDK\plugins\cotexplorer\app\build\generated\res\rs\civ\debug
-com.atakmap.android.cotexplorer.plugin.app-mergeCivDebugResources-5 C:\Users\cbenbow\AndroidStudioProjects\ATAK-MIL-5.3.0.3-SDK\plugins\cotexplorer\app\build\intermediates\incremental\civDebug\mergeCivDebugResources\merged.dir
-com.atakmap.android.cotexplorer.plugin.app-mergeCivDebugResources-6 C:\Users\cbenbow\AndroidStudioProjects\ATAK-MIL-5.3.0.3-SDK\plugins\cotexplorer\app\build\intermediates\incremental\civDebug\mergeCivDebugResources\stripped.dir
-com.atakmap.android.cotexplorer.plugin.app-merged_res-7 C:\Users\cbenbow\AndroidStudioProjects\ATAK-MIL-5.3.0.3-SDK\plugins\cotexplorer\app\build\intermediates\merged_res\civDebug
-com.atakmap.android.cotexplorer.plugin.app-civ-8 C:\Users\cbenbow\AndroidStudioProjects\ATAK-MIL-5.3.0.3-SDK\plugins\cotexplorer\app\src\civ\res
-com.atakmap.android.cotexplorer.plugin.app-civDebug-9 C:\Users\cbenbow\AndroidStudioProjects\ATAK-MIL-5.3.0.3-SDK\plugins\cotexplorer\app\src\civDebug\res
-com.atakmap.android.cotexplorer.plugin.app-main-10 C:\Users\cbenbow\AndroidStudioProjects\ATAK-MIL-5.3.0.3-SDK\plugins\cotexplorer\app\src\main\res
+com.atakmap.android.cotexplorer.plugin.app-core-1.0.0-0 C:\Users\cfben\.gradle\caches\transforms-3\bdb1ba6cabf83502d34b6a8dd21d59f9\transformed\core-1.0.0\res
+com.atakmap.android.cotexplorer.plugin.app-debug-1 C:\Users\cfben\StudioProjects\ATAK Plugin\ATAK-MIL-5.3.0.3-SDK\plugins\cotexplorer\app\build-types\debug\res
+com.atakmap.android.cotexplorer.plugin.app-civ-2 C:\Users\cfben\StudioProjects\ATAK Plugin\ATAK-MIL-5.3.0.3-SDK\plugins\cotexplorer\app\build\generated\res\pngs\civ\debug
+com.atakmap.android.cotexplorer.plugin.app-civ-3 C:\Users\cfben\StudioProjects\ATAK Plugin\ATAK-MIL-5.3.0.3-SDK\plugins\cotexplorer\app\build\generated\res\resValues\civ\debug
+com.atakmap.android.cotexplorer.plugin.app-civ-4 C:\Users\cfben\StudioProjects\ATAK Plugin\ATAK-MIL-5.3.0.3-SDK\plugins\cotexplorer\app\build\generated\res\rs\civ\debug
+com.atakmap.android.cotexplorer.plugin.app-mergeCivDebugResources-5 C:\Users\cfben\StudioProjects\ATAK Plugin\ATAK-MIL-5.3.0.3-SDK\plugins\cotexplorer\app\build\intermediates\incremental\civDebug\mergeCivDebugResources\merged.dir
+com.atakmap.android.cotexplorer.plugin.app-mergeCivDebugResources-6 C:\Users\cfben\StudioProjects\ATAK Plugin\ATAK-MIL-5.3.0.3-SDK\plugins\cotexplorer\app\build\intermediates\incremental\civDebug\mergeCivDebugResources\stripped.dir
+com.atakmap.android.cotexplorer.plugin.app-merged_res-7 C:\Users\cfben\StudioProjects\ATAK Plugin\ATAK-MIL-5.3.0.3-SDK\plugins\cotexplorer\app\build\intermediates\merged_res\civDebug
+com.atakmap.android.cotexplorer.plugin.app-civ-8 C:\Users\cfben\StudioProjects\ATAK Plugin\ATAK-MIL-5.3.0.3-SDK\plugins\cotexplorer\app\src\civ\res
+com.atakmap.android.cotexplorer.plugin.app-civDebug-9 C:\Users\cfben\StudioProjects\ATAK Plugin\ATAK-MIL-5.3.0.3-SDK\plugins\cotexplorer\app\src\civDebug\res
+com.atakmap.android.cotexplorer.plugin.app-main-10 C:\Users\cfben\StudioProjects\ATAK Plugin\ATAK-MIL-5.3.0.3-SDK\plugins\cotexplorer\app\src\main\res

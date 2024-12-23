@@ -89,4 +89,33 @@
             android:textIsSelectable="true"
             android:textColor="@color/white" />
     </ScrollView>
+    <!-- RelativeLayout for pagination buttons -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <Button
+            android:id="@+id/prevPageBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:text="Prev" />
+
+        <TextView
+            android:id="@+id/pageCounter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="1 of 1"
+            android:textSize="16sp"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/nextPageBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="Next" />
+    </RelativeLayout>
 </LinearLayout>

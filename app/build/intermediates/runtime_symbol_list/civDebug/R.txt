@@ -77,11 +77,14 @@ int id inspectBtn 0x7f05000f
 int id italic 0x7f050010
 int id line1 0x7f050011
 int id line3 0x7f050012
+int id nextPageBtn 0x7f050023
 int id normal 0x7f050013
 int id notification_background 0x7f050014
 int id notification_main_column 0x7f050015
 int id notification_main_column_container 0x7f050016
+int id pageCounter 0x7f050025
 int id pauseBtn 0x7f050017
+int id prevPageBtn 0x7f050024
 int id right_icon 0x7f050018
 int id right_side 0x7f050019
 int id saveBtn 0x7f05001a

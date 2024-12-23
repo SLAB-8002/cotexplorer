@@ -4,7 +4,58 @@
             "outputFile": "com.atakmap.android.cotexplorer.plugin.app-mergeCivDebugResources-5:/values/values.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\cbenbow\\.gradle\\caches\\transforms-3\\bdb1ba6cabf83502d34b6a8dd21d59f9\\transformed\\core-1.0.0\\res\\values\\values.xml",
+                    "source": "C:\\Users\\cfben\\StudioProjects\\ATAK Plugin\\ATAK-MIL-5.3.0.3-SDK\\plugins\\cotexplorer\\app\\src\\main\\res\\values\\dimen.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "4",
+                        "startOffsets": "200",
+                        "endColumns": "39",
+                        "endOffsets": "235"
+                    },
+                    "to": {
+                        "startLines": "16",
+                        "startColumns": "4",
+                        "startOffsets": "933",
+                        "endColumns": "39",
+                        "endOffsets": "968"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\cfben\\StudioProjects\\ATAK Plugin\\ATAK-MIL-5.3.0.3-SDK\\plugins\\cotexplorer\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "5,3,8,12,11,14,20,21,17,18,15,23,24",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "152,75,260,466,387,553,862,914,727,779,613,1001,1058",
+                        "endColumns": "67,49,86,83,77,58,50,83,50,79,110,55,74",
+                        "endOffsets": "215,120,342,545,460,607,908,993,773,854,719,1052,1128"
+                    },
+                    "to": {
+                        "startLines": "43,44,45,46,47,48,49,50,51,52,53,54,55",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "2511,2579,2629,2716,2800,2878,2937,2988,3072,3123,3203,3314,3370",
+                        "endColumns": "67,49,86,83,77,58,50,83,50,79,110,55,74",
+                        "endOffsets": "2574,2624,2711,2795,2873,2932,2983,3067,3118,3198,3309,3365,3440"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\cfben\\StudioProjects\\ATAK Plugin\\ATAK-MIL-5.3.0.3-SDK\\plugins\\cotexplorer\\app\\src\\main\\res\\values\\color.xml",
+                    "from": {
+                        "startLines": "6,5,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "172,125,84",
+                        "endColumns": "39,45,39",
+                        "endOffsets": "207,166,119"
+                    },
+                    "to": {
+                        "startLines": "2,3,8",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,95,405",
+                        "endColumns": "39,45,39",
+                        "endOffsets": "90,136,440"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\cfben\\.gradle\\caches\\transforms-3\\bdb1ba6cabf83502d34b6a8dd21d59f9\\transformed\\core-1.0.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,5,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,171,172,176,177,178,6,13,56,88,125",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -23,24 +74,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\cbenbow\\AndroidStudioProjects\\ATAK-MIL-5.3.0.3-SDK\\plugins\\cotexplorer\\app\\src\\main\\res\\values\\strings.xml",
-                    "from": {
-                        "startLines": "5,3,8,12,11,14,20,21,17,18,15,23,24",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "152,75,260,466,387,553,862,914,727,779,613,1001,1058",
-                        "endColumns": "67,49,86,83,77,58,50,83,50,79,110,55,74",
-                        "endOffsets": "215,120,342,545,460,607,908,993,773,854,719,1052,1128"
-                    },
-                    "to": {
-                        "startLines": "43,44,45,46,47,48,49,50,51,52,53,54,55",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "2511,2579,2629,2716,2800,2878,2937,2988,3072,3123,3203,3314,3370",
-                        "endColumns": "67,49,86,83,77,58,50,83,50,79,110,55,74",
-                        "endOffsets": "2574,2624,2711,2795,2873,2932,2983,3067,3118,3198,3309,3365,3440"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\cbenbow\\AndroidStudioProjects\\ATAK-MIL-5.3.0.3-SDK\\plugins\\cotexplorer\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "C:\\Users\\cfben\\StudioProjects\\ATAK Plugin\\ATAK-MIL-5.3.0.3-SDK\\plugins\\cotexplorer\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "68,3,64,85,13,45,54,77,97,89",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -56,40 +90,6 @@
                         "endLines": "63,71,74,77,91,94,102,107,131,136",
                         "endColumns": "12,12,12,12,12,12,12,12,12,12",
                         "endOffsets": "3688,4227,4365,4505,5068,5151,5683,5959,7444,7695"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\cbenbow\\AndroidStudioProjects\\ATAK-MIL-5.3.0.3-SDK\\plugins\\cotexplorer\\app\\src\\main\\res\\values\\dimen.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "4",
-                        "startOffsets": "200",
-                        "endColumns": "39",
-                        "endOffsets": "235"
-                    },
-                    "to": {
-                        "startLines": "16",
-                        "startColumns": "4",
-                        "startOffsets": "933",
-                        "endColumns": "39",
-                        "endOffsets": "968"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\cbenbow\\AndroidStudioProjects\\ATAK-MIL-5.3.0.3-SDK\\plugins\\cotexplorer\\app\\src\\main\\res\\values\\color.xml",
-                    "from": {
-                        "startLines": "6,5,4",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "172,125,84",
-                        "endColumns": "39,45,39",
-                        "endOffsets": "207,166,119"
-                    },
-                    "to": {
-                        "startLines": "2,3,8",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55,95,405",
-                        "endColumns": "39,45,39",
-                        "endOffsets": "90,136,440"
                     }
                 }
             ]

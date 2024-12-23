@@ -78,11 +78,14 @@ id inspectBtn
 id italic
 id line1
 id line3
+id nextPageBtn
 id normal
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id pageCounter
 id pauseBtn
+id prevPageBtn
 id right_icon
 id right_side
 id saveBtn
