@@ -77,6 +77,7 @@ public class cotexplorerDropDownReceiver extends DropDownReceiver implements
     private SharedPreferences _sharedPreference = null;
     private String cotFilter = "";
     private List<String> fullLog = new ArrayList<>();
+    private static final int maxLogSize = 100;
 
     /**************************** CONSTRUCTOR *****************************/
 
@@ -309,6 +310,7 @@ public class cotexplorerDropDownReceiver extends DropDownReceiver implements
 
             // Apply the current filter and update the TextView
             applyFilter();
+            truncateLog();
         });
     }
 
@@ -339,6 +341,12 @@ public class cotexplorerDropDownReceiver extends DropDownReceiver implements
         }
 
         cotexplorerlog.setText(filteredLog);
+    }
+
+    private void truncateLog() {
+        if (fullLog.size() > maxLogSize) {
+            fullLog = fullLog.subList(fullLog.size() - maxLogSize, fullLog.size());
+        }
     }
 
     final class InspectionMapItemSelectionTool
