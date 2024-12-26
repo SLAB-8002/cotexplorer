@@ -4,7 +4,6 @@ package com.atakmap.android.cotexplorer;
 import android.content.Context;
 import android.content.Intent;
 
-import com.atakmap.android.cotexplorer.PluginPreferencesFragment;
 import com.atakmap.android.ipc.AtakBroadcast.DocumentedIntentFilter;
 
 import com.atakmap.android.maps.MapView;
@@ -14,11 +13,11 @@ import com.atakmap.app.preferences.ToolsPreferenceFragment;
 import com.atakmap.coremap.log.Log;
 import com.atakmap.android.cotexplorer.plugin.R;
 
-public class cotexplorerMapComponent extends DropDownMapComponent {
+public class CotExplorerMapComponent extends DropDownMapComponent {
 
-    private static final String TAG = "cotexplorerMapComponent";
+    private static final String TAG = "CotExplorerMapComponent";
     private Context pluginContext;
-    private cotexplorerDropDownReceiver ddr;
+    private CotExplorerDropDownReceiver ddr;
 
     public void onCreate(final Context context, Intent intent,
             final MapView view) {
@@ -27,12 +26,12 @@ public class cotexplorerMapComponent extends DropDownMapComponent {
         super.onCreate(context, intent, view);
         pluginContext = context;
 
-        ddr = new cotexplorerDropDownReceiver(
+        ddr = new CotExplorerDropDownReceiver(
                 view, context);
 
         Log.d(TAG, "registering the plugin filter");
         DocumentedIntentFilter ddFilter = new DocumentedIntentFilter();
-        ddFilter.addAction(cotexplorerDropDownReceiver.SHOW_PLUGIN);
+        ddFilter.addAction(CotExplorerDropDownReceiver.SHOW_PLUGIN);
         registerDropDownReceiver(ddr, ddFilter);
 
         ToolsPreferenceFragment.register(

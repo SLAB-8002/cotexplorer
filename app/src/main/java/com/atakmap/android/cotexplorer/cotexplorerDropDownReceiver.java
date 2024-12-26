@@ -236,6 +236,7 @@ public class cotexplorerDropDownReceiver extends DropDownReceiver implements
                     );
                     fetchOrthoHitItemsMethod.setAccessible(true); // Make the method accessible
                     hitItems = (SortedSet<MapItem>) fetchOrthoHitItemsMethod.invoke(touchController, mockEvent, MapTouchController.MAXITEMS);
+                    Log.d(TAG, "hitItems: " + hitItems);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -246,6 +247,7 @@ public class cotexplorerDropDownReceiver extends DropDownReceiver implements
                     );
                     filterItemsMethod.setAccessible(true); // Make the method accessible
                     hitItems = (SortedSet<MapItem>) filterItemsMethod.invoke(touchController, hitItems, false);
+                    Log.d(TAG, "filtered hitItems: " + hitItems);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -273,7 +275,6 @@ public class cotexplorerDropDownReceiver extends DropDownReceiver implements
                 }
             }
         };
-
 
         inspectBtn.setOnClickListener(new View.OnClickListener() {
             @Override
