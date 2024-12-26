@@ -26,7 +26,9 @@ import com.atakmap.android.gui.AlertDialogHelper;
 import com.atakmap.android.gui.EditText;
 import com.atakmap.android.importexport.CotEventFactory;
 import com.atakmap.android.ipc.AtakBroadcast;
+import com.atakmap.android.maps.DeconflictionAdapter;
 import com.atakmap.android.maps.MapItem;
+import com.atakmap.android.maps.MapTouchController;
 import com.atakmap.android.maps.MapView;
 import com.atakmap.android.cotexplorer.plugin.R;
 import com.atakmap.android.dropdown.DropDown.OnStateListener;
@@ -39,6 +41,7 @@ import com.atakmap.comms.CommsMapComponent;
 import com.atakmap.coremap.cot.event.CotEvent;
 import com.atakmap.android.cotexplorer.plugin.PluginNativeLoader;
 
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -52,6 +55,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.StandardOpenOption;
@@ -60,6 +64,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.SortedSet;
 
 
 public class cotexplorerDropDownReceiver extends DropDownReceiver implements
@@ -216,66 +221,59 @@ public class cotexplorerDropDownReceiver extends DropDownReceiver implements
             @Override
             public void onReceive(Context context, Intent intent) {
                 AtakBroadcast.getInstance().unregisterReceiver(this);
-                final Button itemInspect = mainView
-                        .findViewById(R.id.inspectBtn);
-                itemInspect.setSelected(false);
+                inspectBtn.setSelected(false);
 
-                String uid = intent.getStringExtra("uid");
-                if (uid == null)
+                // Use MapTouchController to fetch hit items
+                MapTouchController touchController = mapView.getMapTouchController();
+
+                // Simulate a MotionEvent or fetch items programmatically
+                MotionEvent mockEvent = MotionEvent.obtain(0, 0, MotionEvent.ACTION_DOWN, mapView.getWidth() / 2f, mapView.getHeight() / 2f, 0);
+
+                SortedSet<MapItem> hitItems = null;
+                try {
+                    Method fetchOrthoHitItemsMethod = MapTouchController.class.getDeclaredMethod(
+                            "_fetchOrthoHitItems", MotionEvent.class, int.class
+                    );
+                    fetchOrthoHitItemsMethod.setAccessible(true); // Make the method accessible
+                    hitItems = (SortedSet<MapItem>) fetchOrthoHitItemsMethod.invoke(touchController, mockEvent, MapTouchController.MAXITEMS);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                try {
+                    Method filterItemsMethod = MapTouchController.class.getDeclaredMethod(
+                            "filterItems", SortedSet.class, boolean.class
+                    );
+                    filterItemsMethod.setAccessible(true); // Make the method accessible
+                    hitItems = (SortedSet<MapItem>) filterItemsMethod.invoke(touchController, hitItems, false);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                if (hitItems == null || hitItems.isEmpty()) {
+                    Toast.makeText(context, "No items found for inspection.", Toast.LENGTH_SHORT).show();
                     return;
+                }
 
-                MapItem mi = getMapView().getMapItem(uid);
-
-                if (mi == null)
-                    return;
-
-                com.atakmap.coremap.log.Log.d(TAG, "class: " + mi.getClass());
-                com.atakmap.coremap.log.Log.d(TAG, "type: " + mi.getType());
-
-                final CotEvent cotEvent = CotEventFactory
-                        .createCotEvent(mi);
-
-                String val;
-                if (cotEvent != null)
-                    val = cotEvent.toString();
-                else if (mi.hasMetaValue("nevercot"))
-                    val = "map item set to never persist (nevercot)";
-                else
-                    val = "error turning a map item into CoT";
-
-                AlertDialog.Builder builderSingle = new AlertDialog.Builder(
-                        getMapView().getContext());
-                TextView showText = new TextView(getMapView().getContext());
-                showText.setText(val);
-                showText.setTextIsSelectable(true);
-                showText.setPadding(32, 32, 32, 32); // Add padding (left, top, right, bottom) in pixels
-                showText.setOnLongClickListener(new View.OnLongClickListener() {
-
-                    @Override
-                    public boolean onLongClick(View v) {
-                        // Copy the Text to the clipboard
-                        ClipboardManager manager = (ClipboardManager) getMapView()
-                                .getContext()
-                                .getSystemService(Context.CLIPBOARD_SERVICE);
-                        TextView showTextParam = (TextView) v;
-                        manager.setText(showTextParam.getText());
-                        Toast.makeText(v.getContext(),
-                                "copied the data", Toast.LENGTH_SHORT).show();
-                        return true;
+                if (hitItems.size() > 1) {
+                    // Use existing deconfliction method
+                    try {
+                        Method buildDropDownMethod = MapTouchController.class.getDeclaredMethod(
+                                "buildDropDown", MotionEvent.class, SortedSet.class, DeconflictionAdapter.DeconflictionType.class
+                        );
+                        buildDropDownMethod.setAccessible(true); // Make the method accessible
+                        buildDropDownMethod.invoke(touchController, mockEvent, hitItems, DeconflictionAdapter.DeconflictionType.SET);
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
-                });
-
-                builderSingle.setTitle("CoT Inspector");
-                builderSingle.setView(showText);
-                builderSingle.setPositiveButton("Close", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss(); // Close the dialog
-                    }
-                });
-                builderSingle.show();
+                } else {
+                    // Single item, show details
+                    MapItem item = hitItems.first();
+                    showMapItemDetailsDialog(item);
+                }
             }
         };
+
 
         inspectBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -447,6 +445,25 @@ public class cotexplorerDropDownReceiver extends DropDownReceiver implements
             return true;
         }
 
+    }
+
+    private void showMapItemDetailsDialog(MapItem item) {
+        final CotEvent cotEvent = CotEventFactory.createCotEvent(item);
+
+        String details = (cotEvent != null) ? cotEvent.toString() :
+                item.hasMetaValue("nevercot") ? "map item set to never persist (nevercot)" :
+                        "error turning a map item into CoT";
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(mapView.getContext());
+        TextView detailsText = new TextView(mapView.getContext());
+        detailsText.setText(details);
+        detailsText.setTextIsSelectable(true);
+        detailsText.setPadding(32, 32, 32, 32); // Add padding
+
+        builder.setTitle("CoT Inspector")
+                .setView(detailsText)
+                .setPositiveButton("Close", (dialog, which) -> dialog.dismiss())
+                .show();
     }
 
     @Override
