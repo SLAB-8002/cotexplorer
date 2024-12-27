@@ -2,14 +2,11 @@ package com.atakmap.android.cotexplorer;
 
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
-import android.content.ClipboardManager;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
 import android.preference.PreferenceManager;
@@ -22,7 +19,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 
 import com.atakmap.android.cot.CotMapComponent;
-import com.atakmap.android.gui.AlertDialogHelper;
 import com.atakmap.android.gui.EditText;
 import com.atakmap.android.importexport.CotEventFactory;
 import com.atakmap.android.ipc.AtakBroadcast;
@@ -56,9 +52,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Method;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.StandardOpenOption;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -67,7 +60,7 @@ import java.util.Locale;
 import java.util.SortedSet;
 
 
-public class cotexplorerDropDownReceiver extends DropDownReceiver implements
+public class CotExplorerDropDownReceiver extends DropDownReceiver implements
         OnStateListener, CommsLogger, View.OnClickListener {
 
     public static final String TAG = "cotexplorer";
@@ -90,7 +83,7 @@ public class cotexplorerDropDownReceiver extends DropDownReceiver implements
 
     /**************************** CONSTRUCTOR *****************************/
 
-    public cotexplorerDropDownReceiver(final MapView mapView,
+    public CotExplorerDropDownReceiver(final MapView mapView,
                                        final Context context) {
         super(mapView);
         this.pluginContext = context;
